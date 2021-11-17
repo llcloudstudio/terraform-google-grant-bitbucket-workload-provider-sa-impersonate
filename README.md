@@ -5,7 +5,7 @@ This module will configure an existing workload identity pool provider so that i
 * To get your deployment_uuid, access your Bitbucket Cloud repository and navigate to repository -> repository settings -> openid connect -> select deployment -> record uuid
 * Service Account must already exist. 
 * Workload Identity Pool Provider must already exist. See module "bitbucket-identity-pool-provider"
-* Workload Identity Pool must already exist. See module "bitbucket-workload-identity-pool"
+* Workload Identity Pool must already exist. See module "llcloudstudio/bitbucket-workload-identity-pool/google"
 
 
 ## Quick start
@@ -15,7 +15,7 @@ To use this module:
 1. In your main.tf include the following: 
 ```
 module "grant_bitbucket_workload_provider_sa_impersonate" {
-  source               = "grant-bitbucket-workload-provider-sa-impersonate"
+  source               = "llcloudstudio/grant-bitbucket-workload-provider-sa-impersonate/google"
   service_account_name = "google_service_account.name"
   identity_pool_name   = "identity_pool.name"
   bb_deployment_uuid   = "bb_deployment_uuid"
